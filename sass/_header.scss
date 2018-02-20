@@ -1,0 +1,116 @@
+.navbar{
+    display: grid;
+    grid-column: center-start / center-end;
+    grid-template-columns: minmax(min-content, 1fr) 1fr;
+    align-items: center;
+    justify-items: start;
+    border-bottom: 1px solid orangered;
+    border-right: 1px solid orangered;
+    border-left: 1px solid orangered;
+    padding: 10px;
+}
+.brand-box{
+    grid-column: 1 / 2;
+    display: flex;
+    margin: auto 15px;
+    .logo{
+        height: 5rem;
+        width: 5rem;
+    }
+    .brand-name{
+        font-family: $font-primary;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        line-height: 1;
+        align-self: center;
+        margin: auto 25px;
+        color: $color-white;
+    }
+}
+.social-box{
+    display: flex;
+    grid-column: 2 / 3;
+    justify-self: end;
+    transform: translateX(-55px);
+    .social-icons{
+        height: 2rem;
+        width: 2rem;
+        margin-left: 2rem;
+        fill: $color-white;
+    }
+    .menu-name{
+        font-family: $font-primary;
+        font-size: 2rem;
+        margin: auto 15px;
+        transform: translateX(25px);
+        color: $color-white;
+    }
+}
+
+.header{
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    grid-template-rows: minmax(90vh, 1fr);
+    background-color: rgba(black, 0.8);
+    transform: translateY(-70px);
+    z-index: -1;
+    // display: none;
+    & > * {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 80vh;
+        
+        display: grid;
+        justify-items: center;
+        //align-items: center;
+        align-content: center;
+    }
+    .link{
+        text-decoration: none;
+        color: $color-white;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        
+        display: grid;
+        &:after{
+            content: '';
+            height: 3px;
+            width: 28%;
+            position: absolute;
+            background-color: $color-dark-yellow;
+        }
+    }
+    .left{
+        background-image: linear-gradient(rgba(black, .8), rgba(black, .3)), url("../img/header-1.png");
+        & > * {
+            width: 60%;
+            margin: 10px;
+        }
+        .link--left{
+            justify-content: start;
+            position: relative;
+            &:after{
+                top: 25px;
+                left: 10px;
+            }
+        }
+    }
+    .right{
+        & > * {
+            width: 60%;
+            margin: 10px;
+            text-align: right;
+            justify-content: end;
+        }
+        background-image: linear-gradient(rgba(black, .8), rgba(black, .3)), url("../img/header-2.png");
+        .link--right{
+            position: relative;
+            &:after{
+                right: 8px;
+                top:25px;
+            }
+        }
+    }
+}

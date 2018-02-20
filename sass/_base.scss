@@ -1,0 +1,42 @@
+//Color Varibles
+$color-light-yellow: #ffd740;
+$color-dark-yellow: #ffab00;
+$color-dark-grey: #263238;
+$color-light-grey: #546e7a;
+$color-white: #f5f5f5;
+
+//font variables
+$font-primary: 'Roboto', sans-serif;
+//font weights
+
+$font-heading: 700;
+$font-subheading: 500;
+$font-body: 300;
+$font-hyperlink: 400;
+$font-quote: 300;
+
+//Prefixes
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; //10px
+}
+
+body{
+    font-family: $font-primary;
+}
+
+//custom base css starts
+.container{
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+    grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+}
