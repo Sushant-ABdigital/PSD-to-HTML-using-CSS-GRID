@@ -1,7 +1,7 @@
 .skillset{
     display: grid;
     grid-column: full-start / full-end;
-    grid-template-columns: 1fr [mid-start] repeat(2, minmax(30vw, 1fr)) [mid-end] 1fr;
+    grid-template-columns: 1fr [mid-start] 5fr [mid-end] 1fr;
     background-color: $color-light-yellow;
     padding: 7rem 0;
     transform: translateY(-80px);

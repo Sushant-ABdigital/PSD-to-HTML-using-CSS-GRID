@@ -1,0 +1,16 @@
+.travel{
+   display: grid;
+   grid-column: 1 / - 1;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   grid-column-gap: 20px;
+   grid-row-gap: 20px;
+   background-color:#BADA55;
+   padding: 10rem 10rem;
+    figure{
+        img{
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

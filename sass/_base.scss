@@ -40,3 +40,21 @@ body{
     grid-template-rows: repeat(6, min-content);
     grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
 }
+
+//Theme headings
+.theme-heading{
+    text-decoration: none;
+    color: $color-dark-yellow;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    position: relative;
+    &:after{
+        content: '';
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background-color: $color-white;
+        top: 35px;
+        left: 20px;
+    }
+}
