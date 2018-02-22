@@ -1,16 +1,73 @@
 .travel{
    display: grid;
    grid-column: 1 / - 1;
-   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-   grid-column-gap: 20px;
-   grid-row-gap: 20px;
-   background-color:#BADA55;
+   grid-template-rows: repeat(2, min-content);
+   grid-row-gap: 50px;
+   background-color:$color-light-yellow;
    padding: 10rem 10rem;
-    figure{
-        img{
-            display: block;
-            height: 100%;
-            width: 100%;
-        }
-    }
+   transform: translateY(-70px);
+   &-heading{
+    justify-self: start;
+   }
+   &-images{
+       display:grid;
+       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+       grid-column-gap: 20px;
+       figure{
+           position: relative;
+           &::before{
+               content: '';
+               width: 0;
+               height:100%;
+               background-color: rgba(38, 50, 56, 0.8%);
+               position: absolute;
+               top:0;
+               left:0;
+               transition: all 0.3s;
+           }
+           &:hover{
+               &::before{
+                   width: 100%;
+               }
+               .travel--caption{
+                   opacity: 1;
+               }
+           }
+           img{
+               object-fit: none;
+               display: block;
+               height: 100%;
+               width: 100%;
+           }
+           .travel--caption{
+               position: absolute;
+               top: 70%;
+               left: 0;
+               width: 100%;
+               display: grid;
+               grid-template-rows: min-content 1fr;
+               align-items: center;
+               justify-items: center;
+               opacity: 0;
+               transition: all .5s;
+               
+               & > * {
+                   align-self: center;
+               }
+               &-heading{
+                   color: white;
+                   font-family: $font-primary;
+                   font-size: 2rem;
+                   border: 2px solid $color-dark-yellow;
+                   padding: 1rem;
+                   margin-bottom: 3rem;
+               }
+               &-p{
+                   color: $color-light-yellow;
+                   font-size: 1.5rem;
+                   font-weight: $font-subheading;
+               }
+           }
+       }
+   }
 }

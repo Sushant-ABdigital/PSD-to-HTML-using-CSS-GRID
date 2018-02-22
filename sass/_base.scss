@@ -58,3 +58,8 @@ body{
         left: 20px;
     }
 }
+.theme-heading-dark{
+    @extend .theme-heading;
+    color: $color-dark-grey;
+
+}

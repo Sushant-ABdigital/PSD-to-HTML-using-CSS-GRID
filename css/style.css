@@ -17,13 +17,13 @@ body {
   grid-template-rows: repeat(6, min-content);
   grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end]; }
 
-.theme-heading {
+.theme-heading, .theme-heading-dark {
   text-decoration: none;
   color: #ffab00;
   font-size: 2.4rem;
   letter-spacing: 1px;
   position: relative; }
-  .theme-heading:after {
+  .theme-heading:after, .theme-heading-dark:after {
     content: '';
     height: 3px;
     width: 100%;
@@ -31,6 +31,9 @@ body {
     background-color: #f5f5f5;
     top: 35px;
     left: 20px; }
+
+.theme-heading-dark {
+  color: #263238; }
 
 .heading_1 {
   font-size: 3.6rem;
@@ -332,12 +335,58 @@ body {
 .travel {
   display: grid;
   grid-column: 1/-1;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  background-color: #BADA55;
-  padding: 10rem 10rem; }
-  .travel figure img {
-    display: block;
-    height: 100%;
-    width: 100%; }
+  grid-template-rows: repeat(2, min-content);
+  grid-row-gap: 50px;
+  background-color: #ffd740;
+  padding: 10rem 10rem;
+  transform: translateY(-70px); }
+  .travel-heading {
+    justify-self: start; }
+  .travel-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 20px; }
+    .travel-images figure {
+      position: relative; }
+      .travel-images figure::before {
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color: rgba(38, 50, 56, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s; }
+      .travel-images figure:hover::before {
+        width: 100%; }
+      .travel-images figure:hover .travel--caption {
+        opacity: 1; }
+      .travel-images figure img {
+        object-fit: none;
+        display: block;
+        height: 100%;
+        width: 100%; }
+      .travel-images figure .travel--caption {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 100%;
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        align-items: center;
+        justify-items: center;
+        opacity: 0;
+        transition: all .5s; }
+        .travel-images figure .travel--caption > * {
+          align-self: center; }
+        .travel-images figure .travel--caption-heading {
+          color: white;
+          font-family: "Roboto", sans-serif;
+          font-size: 2rem;
+          border: 2px solid #ffab00;
+          padding: 1rem;
+          margin-bottom: 3rem; }
+        .travel-images figure .travel--caption-p {
+          color: #ffd740;
+          font-size: 1.5rem;
+          font-weight: 500; }
