@@ -4,9 +4,7 @@
     grid-template-columns: minmax(min-content, 1fr) 1fr;
     align-items: center;
     justify-items: start;
-    border-bottom: 1px solid orangered;
-    border-right: 1px solid orangered;
-    border-left: 1px solid orangered;
+    border-top: 2px solid $color-dark-yellow;
     padding: 10px;
 }
 .brand-box{

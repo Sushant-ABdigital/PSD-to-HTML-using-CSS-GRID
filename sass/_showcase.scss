@@ -1,0 +1,36 @@
+.showcase{
+    display: grid;
+    grid-column: full-start / full-end;
+    grid-template-columns: 1fr [center-start] 5fr [center-end] 1fr;
+    padding: 10rem 0;
+    background-color: $color-light-yellow;
+    transform: translateY(-70px);
+    &-w{
+        display: grid;
+        grid-column: center-start / center-end;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: minmax(200px, 1fr);
+        grid-gap: 25px;
+
+        &-icons{
+            fill: $color-dark-grey;
+            height: 7rem;
+            width: 7rem;
+        }
+        .heading-small{
+            font-size: 2.0rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .content-small{
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-align: center;
+
+        }
+        &-card{
+            display: grid;
+            justify-items: center;
+        }
+    }
+}

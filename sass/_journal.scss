@@ -1,0 +1,96 @@
+.journal{
+    display: grid;
+    grid-column: full-start / full-end;
+    padding: 10rem 0;
+    
+    grid-template-columns: 1fr [center-start] 5fr [center-end] 1fr;
+    background-color: $color-white;
+    transform: translateY(-70px);
+    &-w{
+        display: grid;
+        grid-column: center-start / center-end;
+        grid-template-rows: repeat(2, min-content);
+        grid-row-gap: 10px;
+        &-heading{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5rem;
+        }
+        &-cardheading{
+            font-size: 2.4rem;
+            margin: 1rem 0;
+        }
+        &-subheading{
+            display: flex;
+            //margin: 1rem 0;
+            & > *{
+                font-size: 1.6rem;
+                margin-right: 2rem;
+                &:nth-child(1){
+                    margin-left: 0;
+                }
+                &:nth-child(even){
+                    margin-right: 0.5rem;
+                }
+                &:nth-last-child(1){
+                    margin-right: 0;
+                }
+            }
+            &--date{
+                flex: 1;
+            }    
+        }
+        &-content{
+            font-size: 1.6rem;
+            text-align: justify;         
+        }
+        &--link{
+            text-decoration: none;
+            color: $color-dark-yellow;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        &-cards{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 25px;
+
+            & > * {
+                background-color:white;
+                padding: 10px;
+                -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.22);
+                -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.22);
+                box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.22);
+            }
+            
+            &--card-1{
+             grid-row: 1 / -1;
+             img{
+                 
+                 width: 100%;
+                }
+            }
+            &--card-4{
+             grid-row: 1 / -1;
+             grid-column: 3 / 4;     
+            }
+            .card-flex{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;   
+            }
+        }
+    
+    
+        svg{
+            height: 2rem;
+            width: 2rem;
+        } 
+    } 
+}
+.theme-heading-small{
+    font-size: 1.2rem;
+    color: red;
+}

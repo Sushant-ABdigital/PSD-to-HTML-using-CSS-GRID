@@ -61,5 +61,23 @@ body{
 .theme-heading-dark{
     @extend .theme-heading;
     color: $color-dark-grey;
+}
+.theme-heading-modified{
+    @extend .theme-heading;
+    &:after{
+        background-color: $color-dark-grey;
+    }
+}
+.mt-1{
+    margin-top: 2rem;
+}
+.heading-small{
+    color: $color-dark-grey;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
 
+::placeholder{
+    color: $color-white;
+    font-weight: 300;
 }

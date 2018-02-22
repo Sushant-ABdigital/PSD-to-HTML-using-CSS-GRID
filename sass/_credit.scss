@@ -1,0 +1,16 @@
+.credit{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-column: full-start / full-end;
+    padding: 2px;
+    justify-content: center;
+    &-text{
+        font-size: 1.4rem;
+        margin: 5px 0;
+    }
+    .credit-email{
+        text-decoration: none;
+        color: $color-light-yellow;
+    }
+}
